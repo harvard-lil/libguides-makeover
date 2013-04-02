@@ -1,0 +1,48 @@
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * General page setup
+ */
+#dt_example {
+	font: 80%/1.45em "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #fff;
+}
+
+#dt_example #container {
+	width: 800px;
+	margin: 30px auto;
+	padding: 0;
+}
+
+#selected-library {
+  border: 1px solid #333;
+  font-size: 24px;
+  height: 42px;
+  padding: 5px 2px;
+  width: 145px;
+  margin: 0 0 15px 0;
+}
+
+.dataTables_filter {
+  margin-bottom:8px;
+}
+
+.dataTables_paginate {
+  margin-bottom:8px;
+  margin-top:8px;
+}
+
+#add-row {
+  margin-top:8px;
+}
+
+.delete-row {
+  text-decoration:none;
+  color:red;
+}
+
+input[type=text] {
+   width:185px;
+}
