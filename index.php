@@ -4,6 +4,8 @@ $f3=require('lib/base.php');
 
 $f3->config('api/config.ini');
 
+$f3->set('CACHE',FALSE);
+
 $f3->set('AUTOLOAD','api/; web/;');
 
 $f3->route('GET /api/guide', 'Grab->guide');

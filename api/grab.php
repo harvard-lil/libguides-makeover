@@ -15,7 +15,8 @@ class Grab extends Controller {
       $content = array();
       $content['sections'] = array();
         
-      $html = file_get_html("http://libguides.law.harvard.edu/process_d.php?mode=boxesapi&pid=$guide");
+      $html = file_get_html("http://guides.library.harvard.edu/process_d.php?mode=boxesapi&pid=$guide");
+      $count = 1;
       
       // find all link
       foreach($html->find('optgroup') as $tab) { 
@@ -23,6 +24,11 @@ class Grab extends Controller {
         $tab_name = trim($tab->label);
         $tab_name = preg_replace( '/&nbsp;/', ' ', $tab_name );
         $tab_contents['name'] = trim($tab_name);
+        $tab_id = substr($tab_name, 0, 5);
+        $tab_id = "$tab_id$count";
+        $tab_id = "tab$count";
+        $count++;
+        $tab_contents['id'] = strtolower(trim($tab_id));
         $tab_html = str_get_html($tab);
         $boxes = array();
         foreach($tab_html->find('option') as $option) {
@@ -30,8 +36,8 @@ class Grab extends Controller {
           $id = $option->value;
           $section['name'] = $name;
           $section['id'] = $id;
-          $section_html = file_get_html("http://api.libguides.com/api_box.php?iid=529&bid=$id&context=object");
-          foreach($section_html->find('div.outerbox') as $div){
+          $section_html = file_get_html("http://guides.library.harvard.edu/api_box.php?iid=1242&bid=$id&context=object");
+          foreach($section_html->find('div.innerbox') as $div){
              $section_contents = $div->innertext;
              $section_contents = preg_replace( '/\s+/', ' ', $section_contents );
              $section['contents'] = $section_contents;
@@ -48,8 +54,8 @@ class Grab extends Controller {
       //$callback = $_GET['callback'];
       //header('Content-type: application/json');
       //echo $callback . '(' . json_encode($content) . ')';
-      //echo json_encode($content);
-      $file_path = "guide$guide.json";
+      echo json_encode($content);
+      $file_path = $f3->get('SAVE_PATH') . "guide$guide.json";
       file_put_contents($file_path, json_encode($content));
 
     }

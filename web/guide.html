@@ -7,24 +7,52 @@
 		
 		<title>Research</title>
 
+    <link rel="stylesheet" type="text/css" href="<?php echo $www_root ?>css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $www_root ?>css/guide.css" />
 		<script>
 		  var guide = '<?php echo $name ?>';
 		</script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo $www_root ?>js/waypoints.min.js"></script>
 		<script type="text/javascript" src="<?php echo $www_root ?>js/handlebars.js"></script>
 		<script type="text/javascript" src="<?php echo $www_root ?>js/guide.js"></script>
 
 	</head>
 	<body>
-    <h1><?php echo $name ?> Guide</h1>
-    <div id="guide"></div>
+	  <div class="container">
+      <h1><?php echo $name ?> Guide</h1>
+      <div class="row">
+        <div id="my-nav" class="span3">
+          <ul class="nav nav-list">
+          </ul>
+        </div>
+        <div class="span9 my-content">
+        </div>
+    </div>
+  </div>
     
-  <script id="guide-template" type="text/x-handlebars-template">
+  <!--<script id="guide-template" type="text/x-handlebars-template">
       {{#sections}}
       <div class="section">
         <h2>{{name}}</h2>
         {{#boxes}}
           <h3>{{boxes.name}}</h3>
+          {{{contents}}}
+        {{/boxes}}
+      </div>
+      {{/sections}}
+    </script>-->
+    <script id="nav-template" type="text/x-handlebars-template">
+      {{#sections}}
+        <li><a href="#{{id}}">{{name}}</a></li>
+      {{/sections}}
+    </script>
+    <script id="guide-template" type="text/x-handlebars-template">
+      {{#sections}}
+      <div class="section" id="{{id}}">
+        <h2>{{name}}</h2>
+        {{#boxes}}
+          <h3>{{name}}</h3>
           {{{contents}}}
         {{/boxes}}
       </div>
