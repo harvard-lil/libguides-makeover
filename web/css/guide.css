@@ -1,9 +1,0 @@
-.my-content .section:not(:first-child) {
-  margin-top: 60px;
-}
-
-#my-nav ul {
-  overflow-y: scroll;
-  position:fixed;
-  width:200px;
-}
