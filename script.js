@@ -1,0 +1,200 @@
+$(document).ready(function() {
+
+    // run test on initial page load
+    checkSize();
+
+    // run test on resize of the window
+    //$(window).resize(checkSize);
+    
+    $('#s-lg-tabs-container .nav-stacked').affix({
+    offset: {
+      top: 100
+    , bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
+      }
+    }
+  })
+  
+  $('.s-lg-tabs-side ul li').removeClass('active');
+  $('.s-lg-tabs-side ul li:first').addClass('active');
+  
+  $('#s-lib-bc-customer a').text('Harvard Library');
+  $('#s-lib-bc-site a').text('Research Guides');
+  
+  $('body').windowspy({ target: '.s-lg-tabs-side' });
+  
+  $( "#s-lg-guide-desc-container" ).on( "click", ".s-lg-tabs-side-toggle", function() {
+    $('.s-lg-tabs-side').slideToggle();
+    });
+  
+  
+  $('.s-lib-profile-container').closest('.s-lib-box-container').hide();
+  var email = $('.s-lib-profile-email a').attr('href');
+  var profile = $('.s-lib-profile-image a').attr('href');
+  var image = $('.s-lib-profile-image a img').attr('src');
+  var creator = $('meta[name="DC.Creator"]').attr("content");
+  var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
+  $('#s-lg-guide-desc-container').append('<div class="container  s-lib-side-borders"><div id="s-lg-guide-footer-byline"><a href="' + profile + '"><img src="' + image + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + creator + '</a> | <a href="' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div>');
+  $('#s-lib-bc').prependTo('#s-lib-footer-public');
+});
+
+//Function to the css rule
+function checkSize(){
+    if ($(".s-lg-tabs-side").css("display") == "none" ){
+        $('.s-lg-tabs-side > ul > li').prependTo('.guide-menu-container');
+        $('.guide-menu-container li').removeClass('active');
+    }
+}
+
++function ($) {
+  'use strict';
+
+  // SCROLLSPY CLASS DEFINITION
+  // ==========================
+
+  function WindowSpy(element, options) {
+    var href
+    var process  = $.proxy(this.process, this)
+
+    this.$element       = $(element).is('body') ? $(window) : $(element)
+    this.$body          = $('body')
+    this.$scrollElement = this.$element.on('scroll.bs.windowspy', process)
+    this.options        = $.extend({}, WindowSpy.DEFAULTS, options)
+    this.selector       = (this.options.target
+      || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
+      || '') + ' .nav li > a'
+    this.offsets        = $([])
+    this.targets        = $([])
+    this.activeTarget   = null
+
+    this.refresh()
+    this.process()
+  }
+
+  WindowSpy.DEFAULTS = {
+    offset: 10
+  }
+
+  WindowSpy.prototype.refresh = function () {
+    var offsetMethod = this.$element[0] == window ? 'offset' : 'position'
+
+    this.offsets = $([])
+    this.targets = $([])
+
+    var self     = this
+
+    this.$body
+      .find(this.selector)
+      .map(function () {
+        var $el   = $(this)
+        var href  = $el.data('target') || $el.attr('href')
+        var hrefsplit = href.split('#')
+        href = '#' + hrefsplit[1] 
+        var $href = /^#./.test(href) && $(href)
+
+        return ($href
+          && $href.length
+          && $href.is(':visible')
+          && [[ $href[offsetMethod]().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href ]]) || null
+      })
+      .sort(function (a, b) { return a[0] - b[0] })
+      .each(function () {
+        self.offsets.push(this[0])
+        self.targets.push(this[1])
+      })
+  }
+
+  WindowSpy.prototype.process = function () {
+    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+    var scrollHeight = this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    var maxScroll    = scrollHeight - this.$scrollElement.height()
+    var offsets      = this.offsets
+    var targets      = this.targets
+    var activeTarget = this.activeTarget
+    var i
+
+    if (scrollTop >= maxScroll) {
+      return activeTarget != (i = targets.last()[0]) && this.activate(i)
+    }
+
+    if (activeTarget && scrollTop <= offsets[0]) {
+      return activeTarget != (i = targets[0]) && this.activate(i)
+    }
+
+    for (i = offsets.length; i--;) {
+      activeTarget != targets[i]
+        && scrollTop >= offsets[i]
+        && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+        && this.activate( targets[i] )
+    }
+  }
+
+  WindowSpy.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .parentsUntil(this.options.target, '.active')
+      .removeClass('active')
+
+    var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href$="' + target + '"]'
+
+    var active = $(selector)
+      .parents('li')
+      .addClass('active')
+
+    if (active.parent('.dropdown-menu').length) {
+      active = active
+        .closest('li.dropdown')
+        .addClass('active')
+    }
+
+    active.trigger('activate.bs.windowspy')
+  }
+
+
+  // SCROLLSPY PLUGIN DEFINITION
+  // ===========================
+
+  var old = $.fn.windowspy
+
+  $.fn.windowspy = function (option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.windowspy')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.windowspy', (data = new WindowSpy(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.windowspy.Constructor = WindowSpy
+
+
+  // SCROLLSPY NO CONFLICT
+  // =====================
+
+  $.fn.windowspy.noConflict = function () {
+    $.fn.windowspy = old
+    return this
+  }
+
+
+  // SCROLLSPY DATA-API
+  // ==================
+
+  $(window).on('load.bs.windowspy.data-api', function () {
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this)
+      $spy.windowspy($spy.data())
+    })
+  })
+
+}(jQuery);
+
+
+  //$('#s-lg-guide-desc-container').append('<p class="s-lg-guide-byline">By <a href="' + profile + '">' + author + '</a></p>');
+  //$('#s-lg-guide-desc-container').append('<p class="s-lg-guide-byline">By <a href="' + profile + '">' + author + '</a></p><button class="btn btn-default s-lg-tabs-side-toggle">GUIDE MENU</button>');
+  //$('#s-lib-footer-public').before('<div class="container  s-lib-side-borders"><div class="row"><div id="s-lg-guide-footer-byline" class="col-md-5 col-md-offset-1"><a href="' + profile + '"><img src="' + image + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + author + '</a> | <a href="' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div></div>');
