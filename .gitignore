@@ -1,0 +1,4 @@
+.htaccess
+api/config.ini
+*.json
+web/guides*
