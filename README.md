@@ -3,6 +3,8 @@ LibGuides makeover
 
 LibGuides is getting fitted for a new suit.
 
+Put your key and site id into the settings.example.js file and save as settings.js. Include this file in your guides.
+
 ## License
 
 Dual licensed under the MIT license (below) and [GPL license](http://www.gnu.org/licenses/gpl-3.0.html).
