@@ -225,6 +225,10 @@ h1, h2, h3, h4 {
     margin-top:15px;
 }
 
+.s-lg-label-moreinfo a.s-lg-label-more {
+	border-bottom:none;
+}
+
 @media (min-width: 768px) {
     .facelift-header h1 small {
         font-size:18px;
