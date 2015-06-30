@@ -464,6 +464,8 @@ div#s-lg-guide-header-meta {
     margin-top:0px;
     /*margin-bottom:25px;*/
     float:left;
+    max-height:85px;
+    overflow:hidden;
 }
 
 #s-lg-guide-byline-updated {

@@ -27,15 +27,25 @@ $(document).ready(function() {
     $('.s-lg-tabs-side').slideToggle();
     });
   
-  
   $('.s-lib-profile-container').closest('.s-lib-box-container').hide();
-  var email = $('.s-lib-profile-email a').attr('href');
-  var profile = $('.s-lib-profile-image a').attr('href');
-  var image = $('.s-lib-profile-image a img').attr('src');
-  var creator = $('meta[name="DC.Creator"]').attr("content");
-  var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
-  $('#s-lg-guide-desc-container').append('<div class="container  s-lib-side-borders"><div id="s-lg-guide-footer-byline"><a href="' + profile + '"><img src="' + image + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + creator + '</a> | <a href="' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div>');
   $('#s-lib-bc').prependTo('#s-lib-footer-public');
+  var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
+  var creator = $('meta[name="DC.Creator"]').attr("content");
+  $.getJSON( config.apiUrl, function( data ) {
+    $.each( data, function( key, val ) {
+        if((val.first_name + ' ' + val.last_name) === creator) {
+            if(val.profile.image) {
+                var image_path = config.imageBase + val.profile.account_id + '/profiles/' + val.profile.id + '/' + val.profile.image.file;
+            }
+            else {
+                var image_path = config.imageBackground;
+            }
+            var email = val.email;
+            var profile = val.profile.url;
+            $('#s-lg-guide-desc-container').append('<div class="container  s-lib-side-borders"><div id="s-lg-guide-footer-byline"><a href="' + profile + '"><img src="' + image_path + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + creator + '</a> | <a href="mailto:' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div>');
+        }
+    });
+  });
 });
 
 //Function to the css rule
@@ -193,8 +203,3 @@ function checkSize(){
   })
 
 }(jQuery);
-
-
-  //$('#s-lg-guide-desc-container').append('<p class="s-lg-guide-byline">By <a href="' + profile + '">' + author + '</a></p>');
-  //$('#s-lg-guide-desc-container').append('<p class="s-lg-guide-byline">By <a href="' + profile + '">' + author + '</a></p><button class="btn btn-default s-lg-tabs-side-toggle">GUIDE MENU</button>');
-  //$('#s-lib-footer-public').before('<div class="container  s-lib-side-borders"><div class="row"><div id="s-lg-guide-footer-byline" class="col-md-5 col-md-offset-1"><a href="' + profile + '"><img src="' + image + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + author + '</a> | <a href="' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div></div>');
