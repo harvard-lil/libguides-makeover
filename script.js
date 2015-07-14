@@ -5,7 +5,11 @@ $(document).ready(function() {
 
     // run test on resize of the window
     //$(window).resize(checkSize);
+    var activeClasses = $('.s-lg-tabs-side li.active').length;
+    var contentHeight = $('.s-lg-tab-content').height();
+    var navHeight = $('.s-lg-tabs-side').height();
     
+    if(contentHeight > navHeight) {
     $('#s-lg-tabs-container .nav-stacked').affix({
     offset: {
       top: 100
@@ -14,9 +18,12 @@ $(document).ready(function() {
       }
     }
   })
+  }
   
-  $('.s-lg-tabs-side ul li').removeClass('active');
-  $('.s-lg-tabs-side ul li:first').addClass('active');
+  if(activeClasses > 1) {
+    $('.s-lg-tabs-side ul li').removeClass('active');
+    $('.s-lg-tabs-side ul li:first').addClass('active');
+  }
   
   $('#s-lib-bc-customer a').text('Harvard Library');
   $('#s-lib-bc-site a').text('Research Guides');
