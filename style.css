@@ -151,7 +151,7 @@ h1, h2, h3, h4 {
 }
 
 .s-lg-page-section h4 {
-    font-size: 18px;
+    font-size: 22px;
     color:#999;
     text-transform: uppercase;
     border-bottom:1px #eee solid;
@@ -227,6 +227,10 @@ h1, h2, h3, h4 {
 
 .s-lg-label-moreinfo a.s-lg-label-more {
 	border-bottom:none;
+}
+
+.s-lg-label-moreinfo {
+    display:none;
 }
 
 @media (min-width: 768px) {
@@ -342,7 +346,7 @@ h1, h2, h3, h4 {
 }
 
 #s-lg-tabs-container .nav >li > a {
-    font-size:14px;
+    font-size:16px;
 }
 
 #s-lg-tabs-container .nav-tabs > .active > a, #s-lg-tabs-container .nav-pills > .active > a {

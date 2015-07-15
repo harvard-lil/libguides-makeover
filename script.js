@@ -12,7 +12,7 @@ $(document).ready(function() {
     if(contentHeight > navHeight) {
     $('#s-lg-tabs-container .nav-stacked').affix({
     offset: {
-      top: 100
+      top: 205
     , bottom: function () {
         return (this.bottom = $('.footer').outerHeight(true))
       }
@@ -28,13 +28,12 @@ $(document).ready(function() {
   $('#s-lib-bc-customer a').text('Harvard Library');
   $('#s-lib-bc-site a').text('Research Guides');
   
-  $('body').windowspy({ target: '.s-lg-tabs-side' });
-  
   $( "#s-lg-guide-desc-container" ).on( "click", ".s-lg-tabs-side-toggle", function() {
     $('.s-lg-tabs-side').slideToggle();
     });
   
-  $('.s-lib-profile-container').closest('.s-lib-box-container').hide();
+  $('.s-lib-profile-container').closest('.s-lib-box-container').parent().remove();
+  $('body').windowspy({ target: '.s-lg-tabs-side' });
   $('#s-lib-bc').prependTo('#s-lib-footer-public');
   var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
   var creator = $('meta[name="DC.Creator"]').attr("content");
