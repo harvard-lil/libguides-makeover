@@ -38,7 +38,12 @@ $(document).ready(function() {
   $('#s-lib-bc').prependTo('#s-lib-footer-public');
   var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
   var creator = $('meta[name="DC.Creator"]').attr("content");
-  $.getJSON( config.apiUrl, function( data ) {
+  profileBox(creator);
+  var additionalCreator = $('meta[name="DC.Additional.Creator"]').attr("content");
+  profileBox(additionalCreator)
+  
+  function profileBox(creator) {
+    $.getJSON( config.apiUrl, function( data ) {
     $.each( data, function( key, val ) {
         if((val.first_name + ' ' + val.last_name) === creator) {
             if(val.profile.image) {
@@ -49,10 +54,12 @@ $(document).ready(function() {
             }
             var email = val.email;
             var profile = val.profile.url;
-            $('#s-lg-guide-desc-container').append('<div class="container  s-lib-side-borders"><div id="s-lg-guide-footer-byline"><a href="' + profile + '"><img src="' + image_path + '"></a><p><span id="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + creator + '</a> | <a href="mailto:' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div></div>');
+            $('#s-lg-guide-desc-container').append('<div class="s-lg-guide-footer-byline"><a href="' + profile + '"><img src="' + image_path + '"></a><p><span class="s-lg-guide-byline-updated">Last updated ' + updated_on + '</span><a href="' + profile + '">' + creator + '</a> | <a href="mailto:' + email + '"><i class="fa fa-envelope" title="Email"></i> Email</a></p></div>');
         }
-    });
+    }); 
   });
+  }
+  
 });
 
 //Function to the css rule
