@@ -497,6 +497,15 @@ div#s-lg-guide-header-meta {
     float:left;
 }
 
+/* HOMEPAGE STYLES */
+#col2, #s-lib-panel-container-collapse48380 {
+    display:none;
+}
+
+#hl-lib-sg .pull-right {
+    float: left!important;
+}
+
 /* GUIDE EDITOR STYLES */
 .s-lg-box-special {
     display:none;
