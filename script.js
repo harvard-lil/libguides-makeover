@@ -4,7 +4,7 @@ $(document).ready(function() {
     checkSize();
 
     // run test on resize of the window
-    //$(window).resize(checkSize);
+    $(window).resize(checkSize);
     var activeClasses = $('.s-lg-tabs-side li.active').length;
     var contentHeight = $('.s-lg-tab-content').height();
     var navHeight = $('.s-lg-tabs-side').height();
@@ -64,7 +64,7 @@ $(document).ready(function() {
 //Function to the css rule
 function checkSize(){
     if ($(".s-lg-tabs-side").css("display") == "none" ){
-        $('.s-lg-tabs-side > ul > li').prependTo('.guide-menu-container');
+        $('.s-lg-tabs-side > ul > li').clone().prependTo('.guide-menu-container');
         $('.guide-menu-container li').removeClass('active');
     }
 }
