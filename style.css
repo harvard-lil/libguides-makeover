@@ -21,7 +21,7 @@ a:hover {
 .s-lib-box-content a:link, .s-lib-box-content a:visited {
     /*border-bottom:2px solid;*/
     /*font-weight:600;*/
-    border-bottom:1px solid #ef9eaa;  
+    /*border-bottom:1px solid #ef9eaa;  */
 }
 
 h1, h2, h3, h4 {
@@ -495,6 +495,10 @@ div#s-lg-guide-header-meta {
 
 .s-lg-guide-footer-byline p {
     float:left;
+}
+
+#la_askus_popup {
+    background-color:#fff !important;
 }
 
 /* HOMEPAGE STYLES */
