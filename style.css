@@ -510,6 +510,21 @@ div#s-lg-guide-header-meta {
     float: left!important;
 }
 
+#collapse1_link::before {
+    content: "Subject Guide";
+    font-weight:700;
+}
+
+#collapse4_link::before {
+    content: "How To Guide";
+    font-weight:700;
+}
+
+#collapse1_link .bold, #collapse4_link .bold {
+    display:none;
+}
+
+
 /* GUIDE EDITOR STYLES */
 .s-lg-box-special {
     display:none;

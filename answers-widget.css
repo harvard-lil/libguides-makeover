@@ -30,6 +30,10 @@ a:link, a:visited, a:active {
     top:6px;
 }
 
+#mwlist li:last-child .glyphicon {
+    top:-6px;
+}
+
 .la_topics {
     display:none;
     width:0px !important;
