@@ -59,6 +59,11 @@ $(document).ready(function() {
   });
   }
   
+  // Replace search box
+  //$('#s-lg-guide-search-form').attr('action', 'https://cse.google.com/cse/publicurl');
+  //$( "input[name='guide_id']").attr('name', 'cx').attr('value', '005262195415746452776:ekldow64xay');
+  //$('#s-lg-guide-search-terms').attr('placeholder', 'Search Research Guides');
+  
 });
 
 //Function to the css rule
