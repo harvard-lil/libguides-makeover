@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Research Guides Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://librarylab.law.harvard.edu/dev/annie/libguides2/homepage-style.css" rel="stylesheet">
+        <!-- Place favicon.ico in the root directory -->
+
+    </head>
+    <body>
+        <div class="container">
+        <h1>Libguides home page</h1>
+        <div class="row">
+        <div class="col-md-6">
+        <form class="form-inline" id="cross-search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="query" name="q" placeholder="search guides, resources, FAQ...">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            	<div id="libguides">
+            		<h4>Research guides</h4>
+            		<div class="throbber-loader">
+  						Loading…
+					</div>		
+				</div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+            	<div id="catalog">
+            		<h4>HOLLIS</h4>
+            		<div class="throbber-loader">
+  						Loading…
+					</div>
+				</div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+            	<!--<div id="answers">
+            		<h4>FAQ</h4>
+            		<div class="throbber-loader">
+  						Loading…
+				</div>-->
+			</div>
+        </div>
+        </div>
+        </div>
+        <script>
+        var web_base = "http://hlslwebtest.law.harvard.edu/scatter";
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://librarylab.law.harvard.edu/dev/annie/libguides2/handlebars.js"></script>
+        <script src="http://librarylab.law.harvard.edu/dev/annie/libguides2/homepage.js"></script>
+         <script id="catalog-template" type="text/x-handlebars-template">
+      <h4>HOLLIS</h4>
+      {{#results}}
+      <div class="catalog-result">
+        <h5><i class="{{format}} icon-large pull-right"></i> <a href="{{link}}">{{title}}</a></h5>
+      </div>
+      {{/results}}
+      {{#if alert}}
+      <div class="alert">
+    		{{alert}}
+    	</div>
+    	{{/if}}      
+    </script>
+    <script id="libguides-template" type="text/x-handlebars-template">
+      <h4>Research guides</h4>
+      {{#results}}
+        <h5><a href="{{link}}">{{title}}</a></h5>
+      {{/results}}
+      {{#if alert}}
+      <div class="alert">
+    		{{alert}}
+    	</div>
+    	{{/if}}
+    </script>
+     <script id="answers-template" type="text/x-handlebars-template">
+      <h4>FAQ</h4>
+      {{#results}}
+      <div class="answers-result">
+        <h5><a href="{{link}}">{{{title}}}</a></h5>
+      </div>
+      {{/results}}
+      {{#if alert}}
+      <div class="alert">
+    		{{alert}}
+    	</div>
+    	{{/if}}
+    </script>
+    </body>
+</html>
