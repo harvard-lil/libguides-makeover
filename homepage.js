@@ -1,17 +1,17 @@
 $(document).ready(function() {
   $('#query').focus();
-  //var params = getParams();
+  var params = getParams();
   
-  $('#cross-search').submit(function() {
-  		$('.throbber-loader').show();
-		getResults();
-		return false;
-	});
+  if(params.q) {
+    $("#query").val(params.q);
+    getResults();
+  }
 
 });
 
 function getResults(){
-  var query = $("#query").val();
+	$('.throbber-loader').show();
+	query = $("#query").val();
   query = query.replace(' ', '+');
 	$.getJSON(web_base + "/api/hollis/" + query + "?callback=?", function(data) {
     if(data.results.length > 0) { 
@@ -47,6 +47,18 @@ function getResults(){
     	var source = $("#website-template").html();
     	var template = Handlebars.compile(source);
     	$('#website').html(template({alert: 'No results'}));
+    }
+  });
+  $.getJSON(web_base + "/api/libanswers/" + query + "?callback=?", function(data) {
+  	if(data.results.length > 0) {
+    	var source = $("#answers-template").html();
+    	var template = Handlebars.compile(source);
+    	$('#answers').html(template(data));
+    }
+    else {
+    	var source = $("#answers-template").html();
+    	var template = Handlebars.compile(source);
+    	$('#answers').html(template({alert: 'No results'}));
     }
   });
 }
