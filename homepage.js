@@ -45,6 +45,9 @@ function getResults(){
   });
   $.getJSON(web_base + "/api/libanswers/" + query + "?callback=?", function(data) {
   	if(data.results.length > 0) {
+  		if(data.results.length < data.totalResults) {
+    		data.term = query;
+    	}
     	var source = $("#answers-template").html();
     	var template = Handlebars.compile(source);
     	$('#answers').html(template(data));

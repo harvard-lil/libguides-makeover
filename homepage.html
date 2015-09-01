@@ -93,6 +93,9 @@
       {{#results}}
         <p><a href="{{link}}">{{{title}}}</a></p>
       {{/results}}
+      {{#term}}
+      <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://asklib.law.harvard.edu/search.php?question={{this}}">more</a></p>
+      {{/term}}
       {{#if alert}}
       <div class="alert">
     		{{alert}}
