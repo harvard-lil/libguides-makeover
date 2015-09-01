@@ -65,6 +65,9 @@
       {{#results}}
         <p><a href="{{link}}">{{title}}</a></p>
       {{/results}}
+      {{#term}}
+      <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://hollis.harvard.edu/primo_library/libweb/action/dlSearch.do?vid=HVD&institution=HVD&pcAvailabiltyMode=true&tab=books&indx=1&bulkSize=30&srt=relevance&sortField=default&search_scope=default_scope&query=any,contains,{{this}}">more</a></p>
+      {{/term}}
       {{#if alert}}
       <div class="alert">
     		{{alert}}
@@ -76,6 +79,9 @@
       {{#results}}
         <p><a href="{{link}}">{{title}}</a></p>
       {{/results}}
+      {{#term}}
+      <p class="more-homepage-results"><a class="btn btn-default" role="button" href="https://cse.google.com/cse/publicurl?cx=005262195415746452776%3Aekldow64xay&q={{this}}">more</a></p>
+      {{/term}}
       {{#if alert}}
       <div class="alert">
     		{{alert}}

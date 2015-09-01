@@ -185,6 +185,10 @@ h1, h2, h3, h4 {
     line-height:1.4em;
 }
 
+.more-homepage-results {
+	text-transform:uppercase;
+}
+
 .s-lib-box-content p {
     margin-bottom:25px;
 }

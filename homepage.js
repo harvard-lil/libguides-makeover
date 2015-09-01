@@ -12,9 +12,12 @@ $(document).ready(function() {
 function getResults(){
 	$('.throbber-loader').show();
 	query = $("#query").val();
-  query = query.replace(' ', '+');
-	$.getJSON(web_base + "/api/hollis/" + query + "?callback=?", function(data) {
+	queryPlus = query.replace(' ', '+');
+	$.getJSON(web_base + "/api/hollis/" + queryPlus + "?callback=?", function(data) {
     if(data.results.length > 0) { 
+    	if(data.results.length < data.totalResults) {
+    		data.term = query;
+    	}
     	var source = $("#catalog-template").html();
     	var template = Handlebars.compile(source);
     	$('#catalog').html(template(data));
@@ -27,6 +30,9 @@ function getResults(){
   });
   $.getJSON(web_base + "/api/law-libguides/" + query + "?callback=?", function(data) {
     if(data.results.length > 0) {
+    	if(data.results.length < data.totalResults) {
+    		data.term = query;
+    	}
     	var source = $("#libguides-template").html();
     	var template = Handlebars.compile(source);
     	$('#libguides').html(template(data));
@@ -35,18 +41,6 @@ function getResults(){
     	var source = $("#libguides-template").html();
     	var template = Handlebars.compile(source);
     	$('#libguides').html(template({alert: 'No results'}));
-    }
-  });
-  $.getJSON(web_base + "/api/law-website/" + query + "?callback=?", function(data) {
-  	if(data.results.length > 0) {
-    	var source = $("#website-template").html();
-    	var template = Handlebars.compile(source);
-    	$('#website').html(template(data));
-    }
-    else {
-    	var source = $("#website-template").html();
-    	var template = Handlebars.compile(source);
-    	$('#website').html(template({alert: 'No results'}));
     }
   });
   $.getJSON(web_base + "/api/libanswers/" + query + "?callback=?", function(data) {
