@@ -524,6 +524,11 @@ div#s-lg-guide-header-meta {
     display:none;
 }
 
+/* HOMEPAGE STYLES, TEMPORARY? */
+.s-lg-gtitle {
+	padding-left:10px;
+}
+
 
 /* GUIDE EDITOR STYLES */
 .s-lg-box-special {
