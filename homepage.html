@@ -70,9 +70,8 @@
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://hollis.harvard.edu/primo_library/libweb/action/dlSearch.do?vid=HVD&institution=HVD&pcAvailabiltyMode=true&tab=books&indx=1&bulkSize=30&srt=relevance&sortField=default&search_scope=default_scope&query=any,contains,{{this}}">more</a></p>
       {{/term}}
       {{#if alert}}
-      <div class="alert">
-    		{{alert}}
-    	</div>
+      <p>No results in HOLLIS.</p>
+      <p><a href="http://asklib.law.harvard.edu">Ask a Librarian</a></p>
     	{{/if}}      
     </script>
     <script id="libguides-template" type="text/x-handlebars-template">
@@ -84,9 +83,8 @@
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="https://cse.google.com/cse/publicurl?cx=005262195415746452776%3Aekldow64xay&q={{this}}">more</a></p>
       {{/term}}
       {{#if alert}}
-      <div class="alert">
-    		{{alert}}
-    	</div>
+      <p>No results in research guides.</p>
+      <p><a href="http://asklib.law.harvard.edu">Ask a Librarian</a></p>
     	{{/if}}
     </script>
      <script id="answers-template" type="text/x-handlebars-template">
@@ -98,9 +96,8 @@
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://asklib.law.harvard.edu/search.php?question={{this}}">more</a></p>
       {{/term}}
       {{#if alert}}
-      <div class="alert">
-    		{{alert}}
-    	</div>
+      <p>No results in FAQ.</p>
+      <p><a href="http://asklib.law.harvard.edu">Ask a Librarian</a></p>
     	{{/if}}
     </script>
     </body>

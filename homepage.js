@@ -10,6 +10,7 @@ $(document).ready(function() {
 });
 
 function getResults(){
+	$('.search-results').fadeIn();
 	$('.throbber-loader').show();
 	query = $("#query").val();
 	queryPlus = query.replace(' ', '+');
