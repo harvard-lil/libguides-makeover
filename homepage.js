@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#query').focus();
+  //$('#query').focus();
   var params = getParams();
   
   if(params.q) {
@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 function getResults(){
 	$('.search-results').fadeIn();
+	$('.link-grid').fadeOut();
 	$('.throbber-loader').show();
 	query = $("#query").val();
 	queryPlus = query.replace(' ', '+');

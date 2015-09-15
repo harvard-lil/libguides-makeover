@@ -7,7 +7,7 @@ body {
     padding:0 5px;
 }
 
-a:link, a:visited {
+a:link, a:visited, .link-grid a {
   /*color: #992440;*/
   color:#A51C30;
 }
@@ -193,6 +193,108 @@ h1, h2, h3, h4 {
 	text-transform:uppercase;
 }
 
+.form-inline .form-group input {
+    width:325px;
+}
+
+.link-grid {
+	margin-top:25px;
+}
+
+.link-grid a {
+	display:block;
+	height:175px;
+	font-size:24px;
+	border: 2px solid;
+	border-radius: 2px;
+	margin-top:15px;
+	padding:18px 14px;
+}
+
+.link-grid li {
+	font-size:18px;
+}
+
+a.link-grid-1 {
+	border-color: #293352;
+	color:#293352;
+}
+
+a.link-grid-2 {
+	border-color: #4E84C4;
+	color:#4E84C4;
+}
+
+a.link-grid-3 {
+	border-color: #52854C;
+	color:#52854C;
+}
+
+a.link-grid-4 {
+	border-color: #C4961A;
+	color:#C4961A;
+}
+
+a.link-grid-5 {
+	border-color: #8C8179;
+	color:#8C8179;
+}
+
+a.link-grid-6 {
+	border-color: #D16103;
+	color:#D16103;
+}
+
+#libchat_inline_widget {
+	margin-top:15px;
+}
+
+#libchat_inline_widget h3.lci_h3 {
+	font-size:24px;
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color:#A51C30 !important;
+	font-weight:500 !important;
+	margin-top:0px;
+}
+
+#la_widget {
+	padding:18px 14px !important;
+}
+
+#la_widget #la_qformbutton {
+	background-color:#fff !important;
+	border-color:#eee !important;
+	color:#333 !important;
+	font-weight:500 !important;
+	margin-top:8px;
+	float:right;
+}
+
+#la_widget #la_topdiv {
+	float:left;
+	margin-top:25px !important;
+}
+
+.lci_chat_load {
+	border: 2px solid #A51C30 !important;
+	border-radius: 2px !important;
+	background-color:#fff !important;
+}
+
+#la_qentry {
+	display: block;
+width: 100% !important;
+height: 34px !important;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857;
+color: #555;
+background-color: #FFF;
+background-image: none;
+border: 1px solid #CCC;
+border-radius: 4px;
+}
+
 .s-lib-box-content p {
     margin-bottom:25px;
 }
@@ -245,6 +347,10 @@ h1, h2, h3, h4 {
 }
 
 @media (min-width: 768px) {
+
+	.form-inline .form-group input {
+    	width:675px;
+	}
     .facelift-header h1 small {
         font-size:18px;
     }
@@ -510,10 +616,6 @@ div#s-lg-guide-header-meta {
 
 #la_askus_popup {
     background-color:#fff !important;
-}
-
-.form-inline .form-group input {
-    width:325px;
 }
 
 .search-results > div {
