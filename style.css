@@ -356,15 +356,16 @@ h1, h2, h3, h4 {
 
 #s-lg-tabs-container .nav-tabs > .active > a:hover, #s-lg-tabs-container .nav-pills > .active > a:hover, #s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item:hover a,
 #s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item.active,
-#s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item.active a {
+#s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item.active a, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active:focus, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active:hover, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active a, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active:focus a, .s-lg-tabs-side .s-lg-boxnav .list-group-item.active:hover a {
     background-color:#6E2C34;
     color:#fff;
     border-radius:0;
 }
 
-#s-lg-tabs-container .nav-tabs > li > a, #s-lg-tabs-container .nav-pills > li > a, #s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item a {
+#s-lg-tabs-container .nav-tabs > li > a, #s-lg-tabs-container .nav-pills > li > a, #s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item a, .s-lg-tabs-side .s-lg-boxnav .list-group-item, .s-lg-tabs-side .s-lg-boxnav .list-group-item a {
     background-color:#fff;
     color:#555;
+    border:none;
 }
 
 #s-lg-tabs-container .nav-tabs > li > a:hover, #s-lg-tabs-container .nav-pills > li > a:hover, #s-lg-guide-tabs .s-lg-tabs-side .s-lg-boxnav .list-group-item:hover {
@@ -525,10 +526,33 @@ div#s-lg-guide-header-meta {
 }
 
 /* HOMEPAGE STYLES, TEMPORARY? */
-.s-lg-gtitle {
-	padding-left:10px;
+#s-lg-index-list .s-lib-box-idx-guide-list {
+	border:none;
 }
 
+#s-lg-index-cols .panel, #s-lg-index-cols .panel-default>.panel-heading {
+	border:none;
+	background-color:#fff;
+	font-size:18px;
+	padding-left:0px;
+	box-shadow:none;
+	max-width:480px;
+}
+
+#s-lg-index-cols .panel-default>.panel-heading .badge {
+	background-color:#eee;
+	color:#555;
+	border-radius:8px;
+	font-size:14px;
+}
+
+#s-lg-index-cols .panel-group .panel-heading+.panel-collapse>.list-group, #s-lg-index-cols .panel-group .panel-heading+.panel-collapse>.panel-body {
+	border:none;
+}
+
+.s-lg-guide-list .fa-info-circle, #s-lg-index-cols .alert-info {
+	display:none;
+}
 
 /* GUIDE EDITOR STYLES */
 .s-lg-box-special {

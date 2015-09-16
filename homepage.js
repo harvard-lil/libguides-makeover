@@ -10,7 +10,9 @@ $(document).ready(function() {
 });
 
 function getResults(){
+	var homeUrl = window.location.href.replace(window.location.search,'');
 	$('.search-results').fadeIn();
+	$('#search-results-back').attr('href', homeUrl);
 	$('.link-grid').fadeOut();
 	$('.throbber-loader').show();
 	query = $("#query").val();

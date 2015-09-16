@@ -180,6 +180,16 @@ h1, h2, h3, h4 {
 	display:none;
 }
 
+#search-results-back {
+	display:block;
+	margin-left:16px;
+	margin-top:8px;
+}
+
+#search-results-back .glyphicon {
+	top:2px;
+}
+
 .search-results p {
     font-size:18px;
     max-width:640px;
@@ -245,6 +255,47 @@ a.link-grid-6 {
 	color:#D16103;
 }
 
+a.link-grid-1c {
+	border-color: #293352;
+	color:#293352;
+	background-color:#dfe3ef;
+}
+
+a.link-grid-2c {
+	border-color: #4E84C4;
+	color:#4E84C4;
+	background-color:#dae5f3;
+}
+
+a.link-grid-3c {
+	border-color: #52854C;
+	color:#52854C;
+	background-color:#e3eee2;
+}
+
+a.link-grid-4c {
+	border-color: #C4961A;
+	color:#C4961A;
+	background-color:#fbf4e2;
+}
+
+a.link-grid-5c {
+	border-color: #8C8179;
+	color:#8C8179;
+	background-color:#f2f1f0;
+}
+
+a.link-grid-6c {
+	border-color: #D16103;
+	color:#D16103;
+	background-color:#fff1e5;
+}
+
+#lci_chat_load {
+	width:240px !important;
+	height:340px !important;
+}
+
 #libchat_inline_widget {
 	margin-top:15px;
 }
@@ -278,7 +329,7 @@ a.link-grid-6 {
 .lci_chat_load {
 	border: 2px solid #A51C30 !important;
 	border-radius: 2px !important;
-	background-color:#fff !important;
+	background-color:#fdf5f7 !important;
 }
 
 #la_qentry {
