@@ -259,41 +259,47 @@ a.link-grid-1c {
 	border-color: #293352;
 	color:#293352;
 	background-color:#dfe3ef;
+	border:none;
 }
 
 a.link-grid-2c {
 	border-color: #4E84C4;
 	color:#4E84C4;
 	background-color:#dae5f3;
+	border:none;
 }
 
 a.link-grid-3c {
 	border-color: #52854C;
 	color:#52854C;
 	background-color:#e3eee2;
+	border:none;
 }
 
 a.link-grid-4c {
 	border-color: #C4961A;
 	color:#C4961A;
 	background-color:#fbf4e2;
+	border:none;
 }
 
 a.link-grid-5c {
 	border-color: #8C8179;
 	color:#8C8179;
 	background-color:#f2f1f0;
+	border:none;
 }
 
 a.link-grid-6c {
 	border-color: #D16103;
 	color:#D16103;
 	background-color:#fff1e5;
+	border:none;
 }
 
 #lci_chat_load {
-	width:240px !important;
-	height:340px !important;
+	width:100% !important;
+	height:365px !important;
 }
 
 #libchat_inline_widget {
@@ -329,7 +335,7 @@ a.link-grid-6c {
 .lci_chat_load {
 	border: 2px solid #8C8179 !important;
 	border-radius: 2px !important;
-	background-color:#fdf5f7 !important;
+	background-color:#ffffff !important;
 }
 
 #la_qentry {
