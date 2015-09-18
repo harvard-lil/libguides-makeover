@@ -297,9 +297,17 @@ a.link-grid-6c {
 	border:none;
 }
 
-#lci_chat_load {
+#iframe_d4979a4515b160d7ae6542c733634aeb {
+	width:100%;
+}
+
+#lci_chat_load, #la_widget {
 	width:100% !important;
 	height:365px !important;
+}
+
+#la_widget #la_topselect {
+	width:100%;
 }
 
 #libchat_inline_widget {
@@ -325,6 +333,21 @@ a.link-grid-6c {
 	font-weight:500 !important;
 	margin-top:8px;
 	float:right;
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#la_topbutton {
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+background-color:#fff !important;
+	border-color:#eee !important;
+	color:#333 !important;
+	font-weight:400 !important;
+	margin-top:8px;
+	float:right;
+font-size:14px;
+border-radius: 4px;
+padding:6px 12px;
+height:100%;
 }
 
 #la_widget #la_topdiv {
