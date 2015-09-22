@@ -231,8 +231,8 @@ a.link-grid-1 {
 }
 
 a.link-grid-2 {
-	border-color: #4E84C4;
-	color:#4E84C4;
+	border-color: #A51C30;
+	color:#A51C30;
 }
 
 a.link-grid-3 {
@@ -246,8 +246,8 @@ a.link-grid-4 {
 }
 
 a.link-grid-5 {
-	border-color: #A51C30;
-	color:#A51C30;
+	border-color: #4E84C4;
+	color:#4E84C4;
 }
 
 a.link-grid-6 {
@@ -339,15 +339,15 @@ a.link-grid-6c {
 #la_topbutton {
 	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 background-color:#fff !important;
-	border-color:#eee !important;
+	border:1px solid #eee !important;
 	color:#333 !important;
-	font-weight:400 !important;
 	margin-top:8px;
 	float:right;
 font-size:14px;
 border-radius: 4px;
 padding:6px 12px;
 height:100%;
+font-weight:500 !important;
 }
 
 #la_widget #la_topdiv {
