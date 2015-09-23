@@ -191,9 +191,9 @@ h1, h2, h3, h4 {
 }
 
 .search-results p {
-    font-size:18px;
+    font-size:16px;
     max-width:640px;
-    padding: 10px 0px;
+    padding: 5px 0px;
     font-weight:400;
     color:#555;
     line-height:1.4em;
@@ -698,7 +698,7 @@ div#s-lg-guide-header-meta {
     background-color:#fff !important;
 }
 
-.search-results > div {
+.search-results .results-container {
 	margin-top:35px;
 }
 

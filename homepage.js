@@ -62,6 +62,21 @@ function getResults(){
     	$('#answers').html(template({alert: 'No results'}));
     }
   });
+  $.getJSON(web_base + "/api/law-databases/" + query + "?callback=?", function(data) {
+  	if(data.results.length > 0) {
+  		if(data.results.length < data.totalResults) {
+    		data.term = query;
+    	}
+    	var source = $("#databases-template").html();
+    	var template = Handlebars.compile(source);
+    	$('#databases').html(template(data));
+    }
+    else {
+    	var source = $("#databases-template").html();
+    	var template = Handlebars.compile(source);
+    	$('#databases').html(template({alert: 'No results'}));
+    }
+  });
 }
 
 function getParams() {
