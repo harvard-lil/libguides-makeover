@@ -113,6 +113,10 @@ h1, h2, h3, h4 {
 	width:325px;
 }
 
+.s-la-navbrowse {
+	display:none;
+}
+
 @media (min-width: 768px) {
     .facelift-header h1 small {
         font-size:18px;
@@ -133,7 +137,6 @@ h1, h2, h3, h4 {
         padding-right:15px;
         padding-left:15px;
     }
-
 }
 
 @media (min-width: 992px) {
@@ -158,6 +161,9 @@ h1, h2, h3, h4 {
     .navbar-form .s-la-content-search-query {
     	width:675px;
     }
+    #s-la-page-column-2 {
+    	padding-left:65px;
+    }
 }
 
 .s-la-public-home.s-la-public-header-text {
@@ -169,7 +175,14 @@ h1, h2, h3, h4 {
 }
 
 .s-la-box-title h2 {
-	font-size:18px;
+    font-size: 22px;
+    color: #999;
+    text-transform: uppercase;
+    border-bottom: 1px #eee solid;
+    padding-bottom: 3px;
+    font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom:15px;
 }
 
 .s-la-box-content, .s-la-box-title {
@@ -185,7 +198,7 @@ h1, h2, h3, h4 {
 	background:none;
 }
 
-#contact-us-box {
+#contact-us-box, .s-la-box-position-1 p {
 	font-size:16px;
 }
 
@@ -204,4 +217,14 @@ h1, h2, h3, h4 {
     width:24px;
     margin-right: 12px;
     top: 6px;
+}
+
+.s-la-box-position-1 .libanswers-days {
+	margin-right:15px;
+	width:180px;
+	display:inline-block;
+}
+
+.s-la-box-position-1 h3 {
+	margin-bottom:15px;
 }
