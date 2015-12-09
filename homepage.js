@@ -6,6 +6,11 @@ $(document).ready(function() {
     $("#query").val(params.q);
     getResults();
   }
+  
+  if(params.subjects) {
+  	$(".link-grid").hide();
+	$('.subject-list').show();
+  }
 
 });
 
@@ -17,7 +22,7 @@ function getResults(){
 	$('.throbber-loader').show();
 	query = $("#query").val();
 	queryPlus = query.replace(' ', '+');
-	$.getJSON(web_base + "/api/hollis/" + queryPlus + "?callback=?", function(data) {
+	$.getJSON(web_base + "/api/law-hollis/" + queryPlus + "?callback=?", function(data) {
     if(data.results.length > 0) { 
     	if(data.results.length < data.totalResults) {
     		data.term = query;

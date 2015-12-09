@@ -1,0 +1,207 @@
+body {
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial, sans-serif;
+    line-height:1.42857143;
+    color:#444;
+    font-size:18px;
+    padding:0 5px;
+}
+
+a:link, a:visited {
+  /*color: #992440;*/
+  color:#A51C30;
+}
+
+a:hover {
+    text-decoration:none;
+    color:#b42a4c;
+    border-bottom:border-bottom:1px solid #791523;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial, sans-serif;
+}
+
+.hl-header {
+    display:none;
+}
+
+.navbar {
+    min-height:30px;
+    margin-bottom:0px;
+}
+
+.navbar-toggle {
+    margin-right:0px;
+}
+
+.facelift-signature {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.facelift-signature h1 a {
+  display:block;
+  margin-top: 0px;
+  /*color:#293352;*/
+  color:#666;
+}
+
+.facelift-signature h1 {
+    text-transform:uppercase;
+    font-size:14px;
+    font-family:Georgia, Helvetica, Arial, sans-serif;
+    margin-top:4px;
+}
+
+.facelift-header h1 small {
+    color:#666;
+    margin-top:4px;
+    display:block;
+    font-size:12px;
+}
+
+.navbar-toggle {
+    border:1px solid #ccc;
+    padding:6px 12px;
+}
+
+.facelift-links {
+    margin-right:5px;
+    margin-top:12px;
+    border-top: 1px solid #eee;
+    padding-top:8px;
+}
+
+.facelift-links a {
+    color:#555;
+    font-size:13px;
+    display:block;
+    margin-bottom:12px;
+}
+
+.facelift-links a:hover {
+    color:#b42a4c;
+}
+
+.facelift-links a.facelift-ask-link {
+    display:block;
+    margin-top:15px;
+}
+
+.facelift-signature img {
+    height:50px;
+    display:block;
+    float:left;
+    margin-right:7px;
+    margin-top:0px;
+}
+
+#s-la-bc {
+	display:none;
+}
+
+.navbar-default {
+	border:none;
+}
+
+.navbar-collapse, #s-la-page-title-bar .navbar-form {
+	padding-left:0px;
+}
+
+.navbar-form .s-la-content-search-query {
+	width:325px;
+}
+
+@media (min-width: 768px) {
+    .facelift-header h1 small {
+        font-size:18px;
+    }
+    
+    .facelift-links a {
+        display:inline-block;
+        margin:0 8px;
+    }
+    
+    .facelift-links {
+        float:right;
+        padding-top:0px;
+        border:0;
+    }
+    
+    body {
+        padding-right:15px;
+        padding-left:15px;
+    }
+
+}
+
+@media (min-width: 992px) {
+	.guide-menu-container {
+		display:none;
+	}
+    .facelift-signature h1 {
+        font-size:24px;
+    }
+    
+    .facelift-signature img {
+        margin-top:5px;
+    }
+    
+    .facelift-signature {
+        float:left;
+    }
+    
+    .facelift-signature h1 {
+        float:left;
+    }
+    .navbar-form .s-la-content-search-query {
+    	width:675px;
+    }
+}
+
+.s-la-public-home.s-la-public-header-text {
+	text-align:left;
+}
+
+#s-la-page-title-bar .navbar-text, #s-la-page-title-bar .navbar-right {
+	display:none;
+}
+
+.s-la-box-title h2 {
+	font-size:18px;
+}
+
+.s-la-box-content, .s-la-box-title {
+	padding:0;
+}
+
+.s-la-box-container, .s-la-box-title {
+	border:none;
+}
+
+.s-la-color-bars {
+	background-image:none;
+	background:none;
+}
+
+#contact-us-box {
+	font-size:16px;
+}
+
+#contact-us-box strong {
+    margin-right: 15px;
+    width: 60px;
+    display: inline-block;
+}
+
+#contact-us-box p {
+	margin-bottom:15px;
+}
+
+#contact-us-box i {
+    font-size: 24px;
+    width:24px;
+    margin-right: 12px;
+    top: 6px;
+}

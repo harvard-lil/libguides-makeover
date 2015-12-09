@@ -61,15 +61,20 @@ MENU
         		</a>
         	</div>
         	<div class="col-md-3">
-        		<a class="link-grid-3">Explore a subject</a>
+        		<a class="link-grid-3 explore-subject-list" href="?subjects=show">Explore a subject</a>
         		<a class="link-grid-4" href="http://libcal.law.harvard.edu">Sign up for a training session</a>
         	</div>
         	<div class="col-md-3">
-        		<a class="link-grid-5" href="http://hollis.harvard.edu">Find books, articles, and more...</a>
+        		<a class="link-grid-5" href="http://hollis.harvard.edu">HOLLIS+</a>
         		<a class="link-grid-6" href="http://canvas.harvard.edu">Log into your course sites</a>
         	</div>
         	<div class="col-md-3">
         	<div id='libchat_inline_widget'></div> <script> var libchat_d4979a4515b160d7ae6542c733634aeb = { iid:208, key:'ae191142869193d'}</script> <script type="text/javascript" src="//asklib.law.harvard.edu/load_chat.php?hash=d4979a4515b160d7ae6542c733634aeb&options=libchat_d4979a4515b160d7ae6542c733634aeb"></script>
+        	</div>
+        </div>
+        <div class="row subject-list">
+        	<div id="s-lg-index-list" class="col-md-6">
+        		{{content}}
         	</div>
         </div>
         <div class="row search-results">
@@ -118,7 +123,7 @@ MENU
          <script id="catalog-template" type="text/x-handlebars-template">
       <h4>HOLLIS</h4>
       {{#results}}
-        <p><a href="{{link}}">{{title}}</a></p>
+        <p><a href="{{link}}">{{hlsTitle}}</a></p>
       {{/results}}
       {{#term}}
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://hollis.harvard.edu/primo_library/libweb/action/dlSearch.do?vid=HVD&institution=HVD&pcAvailabiltyMode=true&tab=books&indx=1&bulkSize=30&srt=relevance&sortField=default&search_scope=default_scope&query=any,contains,{{this}}">more</a></p>
@@ -131,7 +136,7 @@ MENU
     <script id="libguides-template" type="text/x-handlebars-template">
       <h4>Research guides</h4>
       {{#results}}
-        <p><a href="{{link}}">{{title}}</a></p>
+        <p><a href="{{link}}">{{hlsTitle}}</a></p>
       {{/results}}
       {{#term}}
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="https://cse.google.com/cse/publicurl?cx=005262195415746452776%3Aekldow64xay&q={{this}}">more</a></p>
@@ -144,7 +149,7 @@ MENU
      <script id="answers-template" type="text/x-handlebars-template">
       <h4>FAQ</h4>
       {{#results}}
-        <p><a href="{{link}}">{{{title}}}</a></p>
+        <p><a href="{{link}}">{{hlsTitle}}</a></p>
       {{/results}}
       {{#term}}
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://asklib.law.harvard.edu/search.php?question={{this}}">more</a></p>
@@ -157,7 +162,7 @@ MENU
     <script id="databases-template" type="text/x-handlebars-template">
       <h4>Databases</h4>
       {{#results}}
-        <p><a href="{{link}}">{{{title}}}</a></p>
+        <p><a href="{{link}}">{{{hlsTitle}}}</a></p>
       {{/results}}
       {{#term}}
       <p class="more-homepage-results"><a class="btn btn-default" role="button" href="http://asklib.law.harvard.edu/search.php?question={{this}}">more</a></p>

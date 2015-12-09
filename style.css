@@ -458,8 +458,16 @@ div#s-lg-guide-header-meta {
     background-color:#fff;
 }
 
+#s-lg-guide-description .s-lg-text-greyout {
+	font-size:12px;
+}
+
 #s-lg-guide-header-attributes {
-    display:none;
+    /*display:none;*/
+}
+
+#s-lg-guide-header-subjects.pad-left-med {
+	margin-left:0px;
 }
 
 .s-lg-guide-footer-byline {
