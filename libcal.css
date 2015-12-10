@@ -22,6 +22,10 @@ h1, h2, h3, h4 {
     font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial, sans-serif;
 }
 
+h1#s-lc-public-app-pt, h1#s-lc-public-header-title {
+	font-size:24px;
+}
+
 .hl-header {
     display:none;
 }
@@ -97,36 +101,7 @@ h1, h2, h3, h4 {
     margin-top:0px;
 }
 
-#s-la-bc {
-	display:none;
-}
-
-.navbar-default {
-	border:none;
-}
-
-.navbar-collapse, #s-la-page-title-bar .navbar-form {
-	padding-left:0px;
-}
-
-.navbar-form .s-la-content-search-query {
-	width:325px;
-}
-
-.s-la-searchform-button {
-	color:#333;
-	border-color:#ccc;
-	background:none;
-}
-
-.s-la-searchform-button:hover {
-	color: #333;
-  	background-color: #e6e6e6;
-  	border-color: #adadad;
-  	background-image:none;
-}
-
-.s-la-navbrowse {
+#s-lc-public-bc {
 	display:none;
 }
 
@@ -150,6 +125,9 @@ h1, h2, h3, h4 {
         padding-right:15px;
         padding-left:15px;
     }
+    #s-lc-public-footer {
+    	margin-top:75px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -171,24 +149,10 @@ h1, h2, h3, h4 {
     .facelift-signature h1 {
         float:left;
     }
-    .navbar-form .s-la-content-search-query {
-    	width:675px;
-    }
-    #s-la-page-column-2 {
-    	padding-left:65px;
-    }
 }
 
-.s-la-public-home.s-la-public-header-text {
-	text-align:left;
-}
-
-#s-la-page-title-bar .navbar-text, #s-la-page-title-bar .navbar-right {
-	display:none;
-}
-
-.s-la-box-title h2 {
-    font-size: 22px;
+.s-lc-box-title h2 {
+    font-size: 18px;
     color: #999;
     text-transform: uppercase;
     border-bottom: 1px #eee solid;
@@ -198,47 +162,35 @@ h1, h2, h3, h4 {
     margin-bottom:15px;
 }
 
-.s-la-box-content, .s-la-box-title {
+.s-lc-box-content, .s-lc-box-title {
 	padding:0;
 }
 
-.s-la-box-container, .s-la-box-title {
+.s-lc-box-container, .s-lc-box-title {
 	border:none;
 }
 
-.s-la-color-bars {
+.s-lc-color-bars {
 	background-image:none;
 	background:none;
 }
 
-#contact-us-box, .s-la-box-position-1 p {
+#s-lc-app-dp {
+	font-size:13px;
+}
+
+#s-lc-app-timeh {
+	text-align: left;
+}
+
+#s-lc-app-twell {
 	font-size:16px;
+}	
+
+#s-lc-app-twell .dl-horizontal .pull-right {
+	font-size:13px;
 }
 
-#contact-us-box strong {
-    margin-right: 15px;
-    width: 60px;
-    display: inline-block;
-}
-
-#contact-us-box p {
-	margin-bottom:15px;
-}
-
-#contact-us-box i {
-    font-size: 24px;
-    /*width:24px;*/
-    margin-right: 12px;
-    top: 6px;
-}
-
-.s-la-box-position-1 .libanswers-days {
-	margin-right:15px;
-	width:180px;
-	display:inline-block;
-}
-
-.s-la-box-position-1 h3 {
-	margin-bottom:15px;
-	margin-top:0px;
+#s-lc-public-footer {
+	font-size:13px;
 }

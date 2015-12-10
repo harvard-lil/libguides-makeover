@@ -36,7 +36,7 @@ $(document).ready(function() {
   $('body').windowspy({ target: '.s-lg-tabs-side' });
   $('#s-lib-bc').prependTo('#s-lib-footer-public');
   var prettyUrl = $('#s-lg-guide-header-url .s-lg-text-greyout').text();
-  $('<p>' + prettyUrl + '</p>').prependTo('#s-lg-guide-description').addClass('s-lg-text-greyout');
+  $('<p><a href="' + prettyUrl + '">' + prettyUrl + '</a></p>').prependTo('#s-lg-guide-description').addClass('s-lg-text-greyout');
   var updated_on = $('meta[name="DC.Date.Modified"]').attr("content");
   var creator = $('meta[name="DC.Creator"]').attr("content");
   profileBox(creator);

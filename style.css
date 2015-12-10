@@ -462,6 +462,10 @@ div#s-lg-guide-header-meta {
 	font-size:12px;
 }
 
+#s-lg-guide-description .s-lg-text-greyout a:link, #s-lg-guide-description .s-lg-text-greyout a:visited {
+	color:#666;
+}
+
 #s-lg-guide-header-attributes {
     /*display:none;*/
 }
