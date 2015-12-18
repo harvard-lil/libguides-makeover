@@ -127,7 +127,14 @@ h1, h2, h3, h4 {
 }
 
 .s-la-navbrowse {
-	display:none;
+	/*display:none;*/
+	border:none;
+}
+
+@media (min-width : 320px) {
+	#contact-us-box span {
+		max-width:70%;
+	}
 }
 
 @media (min-width: 768px) {
@@ -179,8 +186,13 @@ h1, h2, h3, h4 {
     }
 }
 
-.s-la-public-home.s-la-public-header-text {
-	text-align:left;
+.s-la-public-header-text {
+	text-align:left !important;
+	margin-bottom:0px;
+}
+
+h1#s-la-public-header-title {
+	margin-bottom:0px;
 }
 
 #s-la-page-title-bar .navbar-text, #s-la-page-title-bar .navbar-right {
@@ -219,10 +231,13 @@ h1, h2, h3, h4 {
     margin-right: 15px;
     width: 60px;
     display: inline-block;
+    float:left;
 }
 
 #contact-us-box p {
 	margin-bottom:15px;
+	float:left;
+	width:100%;
 }
 
 #contact-us-box i {
@@ -230,6 +245,13 @@ h1, h2, h3, h4 {
     /*width:24px;*/
     margin-right: 12px;
     top: 6px;
+    float:left;
+}
+
+#contact-us-box span {
+	float:left;
+	display:block;
+	max-width:65%;
 }
 
 .s-la-box-position-1 .libanswers-days {
@@ -241,4 +263,37 @@ h1, h2, h3, h4 {
 .s-la-box-position-1 h3 {
 	margin-bottom:15px;
 	margin-top:0px;
+}
+
+.s-la-public-header-description {
+	display:none;
+}
+
+.s-la-box-position-1 p.today-hours-label {
+	font-size:18px;
+	font-weight:bold;
+	float:left;
+	margin-right:10px;
+}
+
+#api_hours_today_iid536_lid0 {
+	float:left;
+}
+
+#api_hours_today_iid536_lid0 .hours-col-loc {
+	display:none;
+}
+
+#s-lc-mhw536 {
+	margin-top:25px;
+	clear:both;
+}
+
+#s-lc-mhw536 .loc_2622 {
+	color:#444;
+	background-color:#fff;
+}
+
+.s-lc-mhw-days {
+	font-size:10px;
 }
