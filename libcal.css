@@ -27,7 +27,7 @@ h1#s-lc-public-app-pt, h1#s-lc-public-header-title {
 }
 
 .hl-header {
-    display:none;
+    /*display:none;*/
 }
 
 .navbar {
@@ -175,7 +175,7 @@ h1#s-lc-public-app-pt, h1#s-lc-public-header-title {
 }
 
 .s-lc-content-callist-browseby-a {
-	margin-top:15px;
+	margin-bottom:15px;
 }
 
 .s-lc-evt-date {
@@ -265,6 +265,19 @@ background-color:#fff !important;
 	font-weight:500 !important;
 	margin-top:8px;
 	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.s-lc-public-header-text {
+	margin-bottom:0px;
+}
+
+#s-lc-box-12101 .s-lc-box-content .s-lc-content-text, #s-lc-box-12101-container {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.back-to-cal {
+	font-size:14px;
 }
 
 #s-lc-public-footer {
