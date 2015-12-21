@@ -297,3 +297,38 @@ h1#s-la-public-header-title {
 .s-lc-mhw-days {
 	font-size:10px;
 }
+
+#s-la-public-search-range {
+	font-size:14px;
+}
+
+#s-la-search-list {
+	margin-left:0px;
+}
+
+#s-la-search-list .s-la-faq-listing-q {
+	font-size:18px;
+	margin-bottom:5px;
+}
+
+#s-la-search-askbutton p, #s-la-public-search-result .alert-info {
+	background-color:#eee;
+	color:#444;
+	border-color:#444;
+}
+
+#s-la-search-askbutton .btn, #s-la-public-search-result .btn {
+background-color:#fff !important;
+	border-color:#444 !important;
+	color:#A51C30 !important;
+	font-weight:500 !important;
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#s-la-search-sidebar {
+	font-size:14px;
+}
+
+#s-la-search-list .s-la-faq-listing-meta {
+	font-size:12px;
+}
